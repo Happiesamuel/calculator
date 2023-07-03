@@ -2,6 +2,7 @@ const all = document.querySelector('.all')
 const input = all.querySelector('.input')
 const but = all.querySelector('button')
 const pre = document.querySelector('.pre')
+const Len = 15;
 const num = ['0','1','2','3','4','5','6','7','8','9','-','+','/','(',')','*']
 setTimeout(function(){
     pre.classList.add('disappear')
@@ -12,6 +13,7 @@ if(e.target.classList.contains('but')){
     num.forEach(x =>{
         if(e.target.textContent === x ){
             input.textContent += x
+if(input.textContent.length > Len) input.textContent = '0'
         }
     })
     if(e.target.textContent === '='){
